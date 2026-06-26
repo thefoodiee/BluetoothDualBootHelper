@@ -128,7 +128,7 @@ sed "s/^Key=.*/Key=$WIN_KEY/g" "$BLUETOOTH_DIR/$TARGET_ADAPTER/$TARGET_DEVICE/in
 
 # Final Check
 finalCheckBox "$TMP_INFO"
-mv "$TMP_INFO" "$BLUETOOTH_DIR/$TARGET_ADAPTER/$TARGET_DEVICE/info" && service bluetooth restart
+mv "$TMP_INFO" "$BLUETOOTH_DIR/$TARGET_ADAPTER/$TARGET_DEVICE/info" && systemctl restart bluetooth
 if [ "$?" = "0" ]
 then
   echo "Finished Successfully"
